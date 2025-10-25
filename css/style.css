@@ -1605,7 +1605,7 @@ section {
 
 /* Differential Section */
 .differential {
-    background: linear-gradient(135deg, var(--azul-escuro) 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
+    background: linear-gradient(48deg, var(--azul-escuro) 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
     color: var(--branco);
     position: relative;
     overflow: hidden;
