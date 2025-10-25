@@ -1,20 +1,22 @@
 // Header scroll effect
 const header = document.getElementById('header');
 const backToTop = document.getElementById('backToTop');
+const nav = document.getElementById('nav');
 
 window.addEventListener('scroll', () => {
     if (window.scrollY > 100) {
         header.classList.add('scrolled');
+        nav.classList.add('scrolled');
         backToTop.classList.add('visible');
     } else {
         header.classList.remove('scrolled');
+        nav.classList.remove('scrolled');
         backToTop.classList.remove('visible');
     }
 });
 
 // Mobile menu toggle
 const mobileMenuToggle = document.getElementById('mobileMenuToggle');
-const nav = document.getElementById('nav');
 
 mobileMenuToggle.addEventListener('click', () => {
     mobileMenuToggle.classList.toggle('active');

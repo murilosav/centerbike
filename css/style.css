@@ -813,6 +813,7 @@ body {
 
 .logo img {
   max-width: 50px;
+  margin: 5px 0;
 }
 
 .logo-text {
@@ -826,6 +827,12 @@ body {
     letter-spacing: 0.2em;
     margin-left: 0.2rem;
 }
+
+.nav.scrolled {
+    background: rgba(30, 58, 138, 0.95);
+    backdrop-filter: blur(10px);
+}
+
 
 .nav-list {
     display: flex;
@@ -1044,7 +1051,7 @@ body {
     width: 100%;
     height: auto;
     filter: drop-shadow(0 20px 40px rgba(0, 0, 0, 0.3));
-    border-radius: 20px;
+    border-radius: 55px;
 }
 
 @keyframes float {
@@ -1052,7 +1059,7 @@ body {
         transform: translateY(0px);
     }
     50% {
-        transform: translateY(-20px);
+        transform: translateY(-10px);
     }
 }
 
@@ -1597,13 +1604,23 @@ section {
         max-width: 40px;
     }
 
+    .hero-text {
+        margin-top: 80px;
+    }
+
+    .hero-content {
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
     .hero-bike-img {
         margin-top: 20px;
+        filter: none;
     }
 
     .nav {
         position: fixed;
-        top: 70px;
+        top: 62px;
         left: 0;
         right: 0;
         background: var(--azul-escuro);
