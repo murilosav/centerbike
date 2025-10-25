@@ -1605,7 +1605,7 @@ section {
 
 /* Differential Section */
 .differential {
-    background: linear-gradient(48deg, #2147b3 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
+    background: linear-gradient(48deg, var(--azul-escuro) 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
     color: var(--branco);
     position: relative;
     overflow: hidden;
@@ -1726,6 +1726,20 @@ section {
     
     .stat-number {
         font-size: 2.5rem;
+    }
+}
+
+@media (max-width: 400px) {
+    .stats-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 0;
+    }
+}
+
+@media (max-width: 377px) {
+    .stats-container {
+        grid-template-columns: repeat(1, 1fr);
+        gap: 0;
     }
 }
 
@@ -1952,7 +1966,7 @@ section {
 }
 
 .footer-logo img {
-  max-width: 100px;
+  max-width: 90px;
 }
 
 .footer-description {
