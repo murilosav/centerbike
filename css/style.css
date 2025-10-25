@@ -1605,7 +1605,7 @@ section {
 
 /* Differential Section */
 .differential {
-    background: linear-gradient(48deg, var(--azul-escuro) 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
+    background: linear-gradient(48deg, #2147b3 0%, var(--azul-medio) 50%, var(--azul-claro) 100%);
     color: var(--branco);
     position: relative;
     overflow: hidden;
@@ -2052,7 +2052,7 @@ section {
     }
 
     .nav.scrolled {
-        background: rgba(30, 58, 138, 0.95);
+        background: rgb(28 67 179 / 95%);
         backdrop-filter: blur(10px);
     }
 
@@ -2075,7 +2075,7 @@ section {
         top: 72px;
         left: 0;
         right: 0;
-        background: var(--azul-escuro);
+        background: rgb(28 67 179 / 95%);
         padding: 2rem;
         transform: translateX(-100%);
         transition: transform 0.3s ease;
