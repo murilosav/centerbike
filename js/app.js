@@ -85,20 +85,12 @@ contactForm.addEventListener('submit', (e) => {
 
     // Get form values
     const nome = document.getElementById('nome').value;
-    const email = document.getElementById('email').value;
     const telefone = document.getElementById('telefone').value;
     const mensagem = document.getElementById('mensagem').value;
 
     // Basic validation
-    if (!nome || !email || !telefone || !mensagem) {
+    if (!nome || !telefone || !mensagem) {
         alert('Por favor, preencha todos os campos!');
-        return;
-    }
-
-    // Email validation
-    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailRegex.test(email)) {
-        alert('Por favor, insira um e-mail válido!');
         return;
     }
 
@@ -109,8 +101,8 @@ contactForm.addEventListener('submit', (e) => {
         return;
     }
 
-    // Create WhatsApp message
-    const whatsappMessage = `Olá! Meu nome é ${nome}.\n\nE-mail: ${email}\nTelefone: ${telefone}\n\nMensagem: ${mensagem}`;
+    // Create WhatsApp message (SEM E-MAIL)
+    const whatsappMessage = `Olá! Meu nome é ${nome}.\n\nTelefone: ${telefone}\n\nMensagem: ${mensagem}`;
     const whatsappURL = `https://wa.me/5547996827641?text=${encodeURIComponent(whatsappMessage)}`;
 
     // Open WhatsApp
@@ -118,9 +110,6 @@ contactForm.addEventListener('submit', (e) => {
 
     // Reset form
     contactForm.reset();
-
-    // Show success message
-    alert('Obrigado pelo contato! Você será redirecionado para o WhatsApp.');
 });
 
 // Phone mask
@@ -162,3 +151,42 @@ window.addEventListener('scroll', () => {
         }
     });
 });
+
+
+
+// Counter Animation for Stats
+function animateCounter(element, target, duration = 2000) {
+    const prefix = element.getAttribute('data-prefix') || '';
+    const suffix = element.getAttribute('data-suffix') || '';
+    let start = 0;
+    const increment = target / (duration / 16);
+    
+    const timer = setInterval(() => {
+        start += increment;
+        if (start >= target) {
+            element.textContent = prefix + target.toLocaleString('pt-BR') + suffix;
+            clearInterval(timer);
+        } else {
+            element.textContent = prefix + Math.floor(start).toLocaleString('pt-BR') + suffix;
+        }
+    }, 16);
+}
+
+// Observe stats section
+const statsObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const statNumbers = entry.target.querySelectorAll('.stat-number');
+            statNumbers.forEach(stat => {
+                const target = parseInt(stat.getAttribute('data-count'));
+                animateCounter(stat, target);
+            });
+            statsObserver.unobserve(entry.target);
+        }
+    });
+}, { threshold: 0.5 });
+
+const statsContainer = document.querySelector('.stats-container');
+if (statsContainer) {
+    statsObserver.observe(statsContainer);
+}
