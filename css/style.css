@@ -1452,6 +1452,14 @@ section {
     background: rgba(228, 64, 95, 0.1);
 }
 
+.social-link.facebook {
+    color: #4043e4;
+}
+
+.social-link.facebook:hover {
+    background: rgba(64, 102, 228, 0.1);
+}
+
 .social-link.whatsapp {
     color: #25D366;
 }
