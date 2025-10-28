@@ -1024,19 +1024,19 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
-    background: rgba(251, 191, 36, 0.15);
+    background: rgb(251 255 0 / 15%);
     backdrop-filter: blur(10px);
-    border: 1px solid rgba(251, 191, 36, 0.3);
+    border: 1px solid rgb(239 255 0 / 30%);
     padding: 0.5rem 1rem;
     border-radius: 50px;
     font-size: 0.9rem;
     margin-bottom: 3.5rem;
-    color: var(--amarelo);
+    color: #fff700;
     font-weight: 500;
 }
 
 .hero-badge svg {
-    color: var(--amarelo);
+    color: #fff700;
 }
 
 .hero-title {
